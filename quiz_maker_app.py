@@ -12,3 +12,13 @@ def save_question():
     if not question_text or not choice_alpha or not choice_bravo or not choice_charlie or not choice_delta or correct_answer not in ['a', 'b', 'c', 'd']:
         messagebox.showerror("Oops!", "Complete all the fields and use a, b, c or d for the correct answer.")
         return
+    
+    with open("quiz.txt", "a", encoding="utf-8") as file:
+        file.write(f"Question: {question}\n")
+        file.write(f"Alpha) {choice_alpha}\n")
+        file.write(f"Bravo) {choice_bravo}\n")
+        file.write(f"Charlie) {choice_charlie}\n")
+        file.write(f"Delta) {choice_delta}\n")
+        file.write(f"Answer: {correct_answer}\n")
+        file.write("---\n")
+        
