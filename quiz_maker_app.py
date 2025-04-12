@@ -51,3 +51,20 @@ tk.Label(root, text="Enter your question below", font=("Helvetica", 12), bg="#ff
 # Question Entry
 entry_question = tk.Entry(root, width=50, bg="#f9e6f7", fg="#660066")
 entry_question.pack(pady=8)
+
+# Choices Entry
+tk.Label(root, text="Choice A:", bg="#ffe6f7", fg="#cc66ff").pack()
+entry_alpha = tk.Entry(root, width=40, bg="#ffe6f7", fg="#660066")
+entry_alpha.pack(pady=2)
+
+tk.Label(root, text="Choice B", bg="#ffe6f7", fg="#cc66ff").pack()
+entry_bravo = tk.Entry(root, width=40, bg="#ffe6f7", fg="#660066")
+entry_bravo.pack(pady=2)
+
+tk.Label(root, text="Choice C:", bg="#ffe6f7", fg="#cc66ff").pack()
+entry_charlie = tk.Entry(root, width=40, bg="#ffe6f7", fg="#660066")
+entry_charlie.pack(pady=2)
+
+tk.Label(root, text="Choice D:", bg="#ffe6f7", fg="#cc66ff").pack()
+entry_delta = tk.Entry(root, width=40, bg="#ffe6f7", fg="#660066")
+entry_delta.pack(pady=2)
