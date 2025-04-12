@@ -8,4 +8,7 @@ def save_question():
     choice_charlie = entry_charlie.get().strip()
     choice_delta = entry_delta.get().strip()
     correct_answer = correct_answer_var.get().strip().lower()
-    
+
+    if not question_text or not choice_alpha or not choice_bravo or not choice_charlie or not choice_delta or correct_answer not in ['a', 'b', 'c', 'd']:
+        messagebox.showerror("Oops!", "Complete all the fields and use a, b, c or d for the correct answer.")
+        return
