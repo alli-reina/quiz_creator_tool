@@ -24,3 +24,12 @@ def save_question():
     
     messagebox.showinfo("Saved", "Your question is saved!")
     clear_fields()
+
+def clear_fields():
+    entry_question.delete(0, tk.END)
+    entry_bravo.delete(0, tk.END)
+    entry_bravo.delete(0, tk.END)
+    entry_charlie.delete(0, tk.END)
+    entry_delta.delete(0, tk.END)
+    correct_answer_var.set("")
+    
