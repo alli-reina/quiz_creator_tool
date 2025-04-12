@@ -47,3 +47,7 @@ root.configure(bg="#ffe6f7")
 # Header
 tk.Label(root, text="Quiz Creator", font=("Helvetica", 20, "bold"), bg="#ffe6f7", fg="#9933cc").pack(pady=10)
 tk.Label(root, text="Enter your question below", font=("Helvetica", 12), bg="#ffe6f7", fg="#cc66ff").pack()
+
+# Question Entry
+entry_question = tk.Entry(root, width=50, bg="#f9e6f7", fg="#660066")
+entry_question.pack(pady=8)
