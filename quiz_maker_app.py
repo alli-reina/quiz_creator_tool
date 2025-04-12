@@ -73,3 +73,9 @@ entry_delta.pack(pady=2)
 tk.Label(root, text="Correct Answer (a/b/c/d):", bg="#ffe6f7", fg="#cc66ff").pack(pady=10)
 correct_answer_var = tk.StringVar()
 tk.Entry(root, textvariable=correct_answer_var, width=10, bg="#f9e6ff", fg="#660066").pack()
+
+# Buttons
+tk.Button(root, text="Save Question", command=save_question, bg="#cc66ff", fg="white", font=("Arial", 11, "bold")).pack(pady=15)
+tk.Button(root, text="Exit", command=exit_app, bg="#ff6699", fg="white", font=("Arial", 10, "bold")).pack(pady=5)
+
+root.mainloop()
