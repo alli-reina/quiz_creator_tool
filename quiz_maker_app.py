@@ -68,3 +68,8 @@ entry_charlie.pack(pady=2)
 tk.Label(root, text="Choice D:", bg="#ffe6f7", fg="#cc66ff").pack()
 entry_delta = tk.Entry(root, width=40, bg="#ffe6f7", fg="#660066")
 entry_delta.pack(pady=2)
+
+# Correct Answer Entry
+tk.Label(root, text="Correct Answer (a/b/c/d):", bg="#ffe6f7", fg="#cc66ff").pack(pady=10)
+correct_answer_var = tk.StringVar()
+tk.Entry(root, textvariable=correct_answer_var, width=10, bg="#f9e6ff", fg="#660066").pack()
