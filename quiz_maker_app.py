@@ -32,4 +32,8 @@ def clear_fields():
     entry_charlie.delete(0, tk.END)
     entry_delta.delete(0, tk.END)
     correct_answer_var.set("")
-    
+
+def exit_app():
+    confirm = messagebox.askyesno("Exit", "Are you sure you want to exit?")
+    if confirm:
+        root.destroy()
