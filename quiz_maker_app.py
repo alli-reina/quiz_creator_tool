@@ -21,4 +21,6 @@ def save_question():
         file.write(f"Delta) {choice_delta}\n")
         file.write(f"Answer: {correct_answer}\n")
         file.write("---\n")
-        
+    
+    messagebox.showinfo("Saved", "Your question is saved!")
+    clear_fields()
