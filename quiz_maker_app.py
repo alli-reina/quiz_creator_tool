@@ -37,3 +37,9 @@ def exit_app():
     confirm = messagebox.askyesno("Exit", "Are you sure you want to exit?")
     if confirm:
         root.destroy()
+
+# Title
+root = tk.Tk()
+root.title("Quiz Creator Tool")
+root.geometry("420x600")
+root.configure(bg="#ffe6f7")
