@@ -119,3 +119,16 @@ def start_quiz():
                     feedback_surface = minecraft_font.render(feedback_message, True, (200, 0, 0))
                 feedback_x_position = window_width // 2 - feedback_surface.get_width() // 2
                 window.blit(feedback_surface, (feedback_x_position, 230))
+
+                if pygame.time.get_ticks() - feedback_start_time > 2000:
+                    current_question_index += 1
+                    show_feedback_screen = False
+                    
+                pygame.display.flip()
+
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        is_quiz_running = False
+                        pygame.quit ()
+                        sys.exit()
+
