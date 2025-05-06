@@ -15,10 +15,10 @@ def save_question():
     
     with open("quiz.txt", "a", encoding="utf-8") as file:
         file.write(f"Question: {question}\n")
-        file.write(f"Alpha) {choice_alpha}\n")
-        file.write(f"Bravo) {choice_bravo}\n")
-        file.write(f"Charlie) {choice_charlie}\n")
-        file.write(f"Delta) {choice_delta}\n")
+        file.write(f"A) {choice_alpha}\n")
+        file.write(f"B) {choice_bravo}\n")
+        file.write(f"C) {choice_charlie}\n")
+        file.write(f"D) {choice_delta}\n")
         file.write(f"Answer: {correct_answer}\n")
         file.write("---\n")
     
@@ -41,7 +41,7 @@ def exit_app():
 # Title
 root = tk.Tk()
 root.title("Quiz Creator Tool")
-root.geometry("400x500")
+root.geometry("400x600")
 root.configure(bg="#ffe6f7")
 
 # Header
