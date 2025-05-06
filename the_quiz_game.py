@@ -100,3 +100,12 @@ def start_quiz():
                 "b" : (593, 390),
                 "c" : (179, 490),
                 "d" : (599, 490),}
+
+            for choice_key in ["a", "b", "c", "d"]:
+                choice_display_text = f"{choice_key.upper()} {current_question[choice_key]}"
+                choice_surface = minecraft_font.render(choice_display_text, True, (0, 0, 0))
+                choice_rectangle = choice_surface.get_rect(topleft=choice_positions[choice_key])
+                window.blit(choice_surface, choice_rectangle)
+                choice_hitboxes[choice_key] = choice_rectangle
+                
+            
