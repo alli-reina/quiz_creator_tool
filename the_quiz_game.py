@@ -108,4 +108,14 @@ def start_quiz():
                 window.blit(choice_surface, choice_rectangle)
                 choice_hitboxes[choice_key] = choice_rectangle
                 
-            
+            if show_feedback_screen:
+                window.blit(feedback_background_image, (0, 0))
+                if "Correct" in feedback_message:
+                    feedback_surface = minecraft_font.render("CORRECT!", True, (0, 150, 0))
+
+                else:
+                    correct_answer_letter = current_question["answer"].upper()
+                    feedback_message = f"WRONG! CORRECT ANSWER IS: {correct_answer_letter}"
+                    feedback_surface = minecraft_font.render(feedback_message, True, (200, 0, 0))
+                feedback_x_position = window_width // 2 - feedback_surface.get_width() // 2
+                window.blit(feedback_surface, (feedback_x_position, 230))
