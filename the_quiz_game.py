@@ -105,8 +105,7 @@ def start_quiz():
                 "a": (179, 390),
                 "b": (593, 390),
                 "c": (179, 490),
-                "d": (599, 490),
-            }
+                "d": (599, 490),}
 
             for choice_key in ["a", "b", "c", "d"]:
                 choice_display_text = f"{choice_key.upper()}) {current_question[choice_key]}"
@@ -139,11 +138,9 @@ def start_quiz():
                 pygame.quit()
                 sys.exit()
 
-            if (
-                event.type == pygame.MOUSEBUTTONDOWN
+            if (event.type == pygame.MOUSEBUTTONDOWN
                 and not show_feedback_screen
-                and current_question_index < len(quiz_data_list)
-            ):
+                and current_question_index < len(quiz_data_list)):
                 mouse_position = pygame.mouse.get_pos()
                 for choice_letter, hitbox in choice_hitboxes.items():
                     if hitbox.collidepoint(mouse_position):
