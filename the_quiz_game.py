@@ -76,3 +76,27 @@ def start_quiz():
     choice_hitboxes = {}
 
     is_quiz_running = False
+    while is_quiz_running:
+        clock.tick(60)
+        window.blit(quiz_background_image, (0, 0))
+
+        if current_question_index >= len(quiz_data_list):
+            window.blit(score_background_image, (0,0))
+            score_text = minecraft_font.render(f"You got {player_score} out of {len(quiz_data_list)} correct!", True, (0, 0, 0))
+            score_x_position = window_width // 2 - score_text.get_width() // 2
+            score_y_position = 510
+            window.blit(score_text,(score_x_position, score_y_position))
+        else:
+            current_question = quiz_data_list[current_question_index]
+            choice_hitboxes.clear()
+
+            wrapped_question_lines = wrap_text_to_fit(current_question["question"], minecraft_font, 100)
+            for line_index, line_text in enumerate(wrapped_question_lines):
+                line_surface = minecraft_font.render(line_text, True, (0, 0, 0))
+                window.blit(line_surface, (200, 190 + line_index * 30))
+
+            choice_positions = {
+                "a" : (179, 300),
+                "b" : (593, 390),
+                "c" : (179, 490),
+                "d" : (599, 490),}
