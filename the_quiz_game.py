@@ -132,3 +132,37 @@ def start_quiz():
                         pygame.quit ()
                         sys.exit()
 
+                    if event.type == pygame.MOUSEBUTTONDOWN and not show_feedback_screen and current_question_index < len(quiz_data_list):
+                        mouse_position = pygame.mouse.get_pos()
+                        for choice_letter, hitbox in choice_hitboxes.items():
+                            if hitbox.collidepoint(mouse_position):
+                                correct_choice = quiz_data_list[current_question_index]["answer"]
+                                if choice_letter == correct_choice:
+                                    feedback_message = "Correct!"
+                                    player_score += 1
+                                else:
+                                    feedback_message = f"WRONG! CORRECT ANSWER IS: {correct_choice.upper()}"
+                                feedback_start_time = pygame.time.get_ticks()
+                                show_feedback_screen = True
+
+    # Intro screen Loop
+    intro_running = True
+    while intro_running:
+        clocl.tick(60)
+        window.blit(intro_background_image, (0, 0))
+        window.blit(start_button_image, start_button_rectangle.topleft)
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                intro_running = False
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_position = pygame.mouse.get_pos()
+                if start_button_rectangle.collidepoint(mouse_position):
+                    intro_running = False
+                    start_quiz()
+
+pygame.quit()
