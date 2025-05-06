@@ -67,3 +67,12 @@ def start_quiz():
     score_background_image = pygame.image.load("score_template.png")
     score_background_image = pygame.transform.scale(score_background_image, (window_width, window_height))
     
+    quiz_data_list = load_quiz_data("quiz.txt")
+    current_question_index = 0
+    player_score = 0
+    show_feedback_screen = False
+    feedback_message = ""
+    feedback_start_time = 0
+    choice_hitboxes = {}
+
+    is_quiz_running = False
