@@ -57,3 +57,13 @@ def wrap_text_to_fit(text, font, max_width):
     lines.append(current_line)
     return lines
 
+def start_quiz():
+    quiz_background_image = pygame.image.load("quiz_template.png")
+    quiz_background_image = pygame.transform.scale(quiz_background_image, (window_width, window_height))
+
+    feedback_background_image = pygame.image.load("feedback_template.png")
+    feedback_background_image = pygame.transform.scale(feedback_background_image, (window_width, window_height))
+
+    score_background_image = pygame.image.load("score_template.png")
+    score_background_image = pygame.transform.scale(score_background_image, (window_width, window_height))
+    
