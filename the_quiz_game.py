@@ -8,7 +8,7 @@ import random
 pygame.init()
 
 # Load the font
-minecraft_font = pygame.font.Font("Minecraft.ttf", 26)
+minecraft_font = pygame.font.Font("minecraft.ttf", 26)
 
 # Set up the game window
 window_width, window_height = 1080, 600
